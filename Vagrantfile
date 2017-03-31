@@ -20,7 +20,8 @@ $nginx_install = <<SCRIPT
   if [ ! -L /usr/share/nginx/html ]; then
     rm -rf /usr/share/nginx/html
     #ln -s /vagrant/html /usr/share/nginx/html
-    ln -s /opt/vagrantsite /usr/share/nginx/html/vagrantsite
+    mkdir /usr/share/nginx/html
+    ln -s /opt/vagrantsite /usr/share/nginx/html
   fi
 SCRIPT
 
@@ -36,6 +37,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end 
 end
-
-
 
